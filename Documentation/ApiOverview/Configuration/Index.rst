@@ -34,7 +34,10 @@ you will be directed to another manual or to a different section in this manual.
    Glossary
    ConfigurationSyntax
    ConfigurationMethods
+   ConfigurationMethodsReference
+   BestPractices
    ../TypoScriptSyntax/Index
+   ../TypoScriptConstantSyntax/Index
    ../Yaml/Index
    ../GlobalValues/GlobalVariables/Index
    ../GlobalValues/Typo3ConfVars/Index

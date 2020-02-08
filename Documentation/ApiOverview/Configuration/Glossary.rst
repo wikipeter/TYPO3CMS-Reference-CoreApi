@@ -2,9 +2,9 @@
 
 .. _configuration-glossary:
 
-===========
-Glossary
-===========
+======================
+Configuration glossary
+======================
 
 We refer to a configuration language, that only defines the syntax as
 **configuration syntax**. When we refer to semantics, where the values
@@ -15,7 +15,7 @@ Configuration syntax
 ====================
 
 **Syntax** describes common rules for a language (e.g. how are lines terminated,
-how are values assigned, what are separators, etc.) while semantics define the meaning.
+how are values assigned, what are separators, etc.) - while semantics define the meaning.
 
 For example, using only the basic syntax of yaml, this is a syntactically
 correct snippet:
@@ -64,7 +64,14 @@ A configuration schema can be used to define what may be configured:
 * What are the default values?
 
 
-So, for example in the example above we would define that there is a variable
+So, for example in the example used above
+
+.. code-block:: yaml
+
+   foo: bar
+
+
+we would define that there is a variable
 'foo' with a datatype string and a default value might be an empty string.
 
 There are specific languages for defining a schema to be applied, for example
@@ -80,11 +87,11 @@ the parsing and validation is done in the PHP source.
 
 Examples for schema in TYPO3:
 
-* Global configuration (LocalConfiguration.php, TYPO3_CONF_VARS) is defined in
+* The schema for Global configuration is defined in
   :file:`typo3/sysext/core/Configuration/DefaultConfigurationDescription.yaml`.
   The default values are in :file:`typo3/sysext/core/Configuration/DefaultConfiguration.php`
   Here, a YAML file (in combination with a PHP file) is used to define the configuration,
-  which is set in PHP (as PHP array).
+  which is set in PHP (as PHP array) `$GLOBALS['TYPO3_CONF_VARS']`.
 * TypoScript constant syntax is used to define Extension Configuration.
 
 Examples for general schemas:
@@ -97,22 +104,54 @@ Examples for general schemas:
 
    * `Overview: Schema Language on ScienceDirect <https://www.sciencedirect.com/topics/computer-science/schema-language>`__
 
-Configuration methods
-=====================
+.. _glossary-configuration-method:
+
+Configuration method
+====================
 
 "Configuration methods" is not a generally used term. We use it in this chapter
 to differentiate between "configuration syntax" (as explained above),
 which only defines the syntax and the "configuration method", which
-consist of:
+consist of much more.
 
-* The used **syntax** language
-* **Schema** (data types, default values, what settings are required, ...)
-* What do these variables mean, how will they be interpreted?
-* Where the values are stored (**persistence**): In a configuration file,
-  the database, etc.
-* Who can change the values (**privileges**)
-* To what the values apply (**scope**). Are they global or do they only
-  apply to certain extension, page, plugin, users or usergroups?
+In general, a configuration method specifies:
+
+#. **Configuration syntax** (e.g. PHP, TypoScript, XML, YAML)
+#. **Configuration schema** which defines which properties can be
+   filled with which types of values. In TYPO3 there is not always
+   an explicit schema. If a schema exists, the following may be relevant:
+
+   * A schema language
+   * A schema, consisting of variables, data types, default values,
+   * A location of the schema (file, database field)
+   * How this may be changed or extended
+
+#. A **configuration setting method** determines how the properties are
+   filled with values, for example by providing a PHP or YAML file or
+   selecting options in the Global Configuration section in the Backend.
+#. **Persistence** is where the configuration is stored,
+   for example filenames (e.g. :file:`typo3conf/LocalConfiguration.php`) or
+   which tables and fields are used for storage in the database (e.g.
+   :typoscript:`tt_content.pi_flexform` for FlexForm)
+#. **Scope**: To what the configuration applies. Is it global, does
+   it only affect a specific extension, only a specific page tree
+   or user group etc. Possible values are:
+
+   * `global` (entire installation)
+   * `site`
+   * `extension` (one extension)
+   * `be-user` (backend user)
+   * `be-usergroup` (backend user group)
+   * `contentelement` (scope applies to one content element, persisted
+     in a database record in the table `tt_content`)
+   * `page` (one page or one page and its subpages)
+
+#. **Privilege**: By whom and where can the configuration be changed
+
+   * backend: `system` (system maintainer) | `admin` | `be-user` (backend user)
+   * `extension`
+   * `file` (a configuration file on the system)
+
 
 Examples for TYPO3 specific configuration methods are:
 

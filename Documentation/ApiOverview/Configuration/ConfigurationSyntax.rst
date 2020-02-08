@@ -38,4 +38,6 @@ More information can be found in these chapters:
 .. seealso::
 
    * :ref:`typoscript-syntax-start`
-   * :ref:`yaml`
+   * :ref:`typoscript-constant-syntax`
+   * :ref:`symfony-expression-language` used for TypoScript conditions
+   * :ref:`yaml-syntax`

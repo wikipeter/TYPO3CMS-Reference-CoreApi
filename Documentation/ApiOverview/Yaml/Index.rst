@@ -1,13 +1,16 @@
 .. include:: ../../Includes.txt
 
-.. _yaml:
+.. _yaml-api:
 
-=============
-YAML in TYPO3
-=============
+========
+YAML API
+========
 
 YAML is used in TYPO3 for various configurations; most notable are site configuration (see :ref:`sitehandling`)
 and EXT:form configuration (see :ref:`form:introduction`).
+
+
+.. _yaml-file-loader:
 
 YamlFileLoader
 ==============
