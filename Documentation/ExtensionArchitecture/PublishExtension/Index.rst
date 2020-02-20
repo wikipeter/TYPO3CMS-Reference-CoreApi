@@ -72,8 +72,8 @@ Advantages:
 
 .. _publish-extension-docs:
 
-Register Your Extension for docs.typo3.org
-==========================================
+Register Your Extension Documentation on docs.typo3.org
+=======================================================
 
 This basically means that you will add a webhook in your extension repository.
 In order for this to work, you must have a :file:`composer.json` and push some
@@ -84,6 +84,6 @@ step 4 (request redirects) which is not necessary for new documentation.
 
 Advantages:
 
-* Your extension will be rendered on docs.typo3.org
+* Your extension documentation will be rendered on docs.typo3.org
 * The documentation link will automatically be added if your extension is registered
   on extensions.typo3.org (TER).
