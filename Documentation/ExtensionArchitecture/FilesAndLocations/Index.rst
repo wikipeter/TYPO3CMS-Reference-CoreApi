@@ -131,7 +131,7 @@ extensions with the name prefix "ext\_".
 
          .. code-block:: csh
 
-            mysqldump --password=[password] [database name] [tablename] --add-drop-table > ./ext_tables_static.sql
+            mysqldump --password=[password] [database name] [tablename] --add-drop-table > ./ext_tables_static+adt.sql
 
          :code:`--add-drop-table` will make sure to include a DROP TABLE
          statement so any data is inserted in a fresh table.
