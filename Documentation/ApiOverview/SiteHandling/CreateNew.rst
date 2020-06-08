@@ -32,7 +32,7 @@ First, enter an identifier at (1).
 
     The site identifier is the name of the folder within `<project-root>/config/sites/` that will hold your
     configuration file(s). When choosing an identifier make sure to stick to ASCII but you may also
-    use `-`, `_` and `.` for convenience. Examples: `main-site` and `langing-page`.
+    use `-`, `_` and `.` for convenience. Examples: `main-site` and `landing-page`.
 
 Then, enter a base for your site at (2).
 
