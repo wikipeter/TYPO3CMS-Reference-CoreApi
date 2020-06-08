@@ -72,7 +72,7 @@ Example
         title: 'DE'
         enabled: true
         languageId: '1'
-        base: https://example.de/'
+        base: 'https://example.de/'
         baseVariants:
           -
             base: 'https://de.example.local/'
